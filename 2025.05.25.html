@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>라이더 명세서 (2025.05.25)</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            padding: 30px;
+        }
+        .card {
+            background: white;
+            font-size: 20px;
+            padding: 30px;
+            max-width: 1000px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            white-space: nowrap;
+            overflow-x: auto;
+        }
+        .info-row:last-child {
+            border-bottom: none;
+        }
+        .locked .card-body {
+            display: none;
+        }
+        .unlocked .card-body {
+            display: block;
+        }
+        button {
+            margin-top: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align:center;">라이더 정산 명세서 (2025.05.25)</h1>
+
+    <div class="card locked" id="card_0">
+        <h2>김정혁 (kjh130212)</h2>
+        <button onclick="toggleCard('card_0', '6144')">상세보기</button>
+        <button onclick="hideCard('card_0')">닫기</button>
+        <div class="card-body">
+            <div class="info-row"><strong>정산액</strong><span>70,495원</span></div>
+            <div class="info-row"><strong>주문수</strong><span>17건</span></div>
+            <div class="info-row"><strong>배달료</strong><span>77,520원</span></div>
+            <div class="info-row"><strong>본사 및 협력사 수수료</strong><span>1,360원</span></div>
+            <div class="info-row"><strong>지사수수료</strong><span>2,040원</span></div>
+            <div class="info-row"><strong>고용보험</strong><span>502원</span></div>
+            <div class="info-row"><strong>산재보험</strong><span>565원</span></div>
+            <div class="info-row"><strong>원천세</strong><span>2,558원</span></div>
+            <div class="info-row"><strong>정산액 계산방법</strong><span>배달료 - 본사 및 협력사 수수료 - 지사 수수료 - 고용보험 - 산재보험 - 원천세 = 정산액</span></div>
+        </div>
+    </div>
+    
+    <div class="card locked" id="card_1">
+        <h2>안태옥 (dksxodhr)</h2>
+        <button onclick="toggleCard('card_1', '1035')">상세보기</button>
+        <button onclick="hideCard('card_1')">닫기</button>
+        <div class="card-body">
+            <div class="info-row"><strong>정산액</strong><span>108,908원</span></div>
+            <div class="info-row"><strong>주문수</strong><span>28건</span></div>
+            <div class="info-row"><strong>배달료</strong><span>116,600원</span></div>
+            <div class="info-row"><strong>본사 및 협력사 수수료</strong><span>2,240원</span></div>
+            <div class="info-row"><strong>지사수수료</strong><span>0원</span></div>
+            <div class="info-row"><strong>고용보험</strong><span>755원</span></div>
+            <div class="info-row"><strong>산재보험</strong><span>849원</span></div>
+            <div class="info-row"><strong>원천세</strong><span>3,848원</span></div>
+            <div class="info-row"><strong>정산액 계산방법</strong><span>배달료 - 본사 및 협력사 수수료 - 지사 수수료 - 고용보험 - 산재보험 - 원천세 = 정산액</span></div>
+        </div>
+    </div>
+    
+    <div class="card locked" id="card_2">
+        <h2>양해성 (didgotjd00)</h2>
+        <button onclick="toggleCard('card_2', '5787')">상세보기</button>
+        <button onclick="hideCard('card_2')">닫기</button>
+        <div class="card-body">
+            <div class="info-row"><strong>정산액</strong><span>172,630원</span></div>
+            <div class="info-row"><strong>주문수</strong><span>45건</span></div>
+            <div class="info-row"><strong>배달료</strong><span>190,540원</span></div>
+            <div class="info-row"><strong>본사 및 협력사 수수료</strong><span>3,600원</span></div>
+            <div class="info-row"><strong>지사수수료</strong><span>5,400원</span></div>
+            <div class="info-row"><strong>고용보험</strong><span>1,234원</span></div>
+            <div class="info-row"><strong>산재보험</strong><span>1,388원</span></div>
+            <div class="info-row"><strong>원천세</strong><span>6,288원</span></div>
+            <div class="info-row"><strong>정산액 계산방법</strong><span>배달료 - 본사 및 협력사 수수료 - 지사 수수료 - 고용보험 - 산재보험 - 원천세 = 정산액</span></div>
+        </div>
+    </div>
+    
+    <div class="card locked" id="card_3">
+        <h2>유재하 (hamyon92)</h2>
+        <button onclick="toggleCard('card_3', '0036')">상세보기</button>
+        <button onclick="hideCard('card_3')">닫기</button>
+        <div class="card-body">
+            <div class="info-row"><strong>정산액</strong><span>61,935원</span></div>
+            <div class="info-row"><strong>주문수</strong><span>15건</span></div>
+            <div class="info-row"><strong>배달료</strong><span>68,120원</span></div>
+            <div class="info-row"><strong>본사 및 협력사 수수료</strong><span>1,200원</span></div>
+            <div class="info-row"><strong>지사수수료</strong><span>1,800원</span></div>
+            <div class="info-row"><strong>고용보험</strong><span>441원</span></div>
+            <div class="info-row"><strong>산재보험</strong><span>496원</span></div>
+            <div class="info-row"><strong>원천세</strong><span>2,248원</span></div>
+            <div class="info-row"><strong>정산액 계산방법</strong><span>배달료 - 본사 및 협력사 수수료 - 지사 수수료 - 고용보험 - 산재보험 - 원천세 = 정산액</span></div>
+        </div>
+    </div>
+    
+    <div class="card locked" id="card_4">
+        <h2>임태종 (asdsw12)</h2>
+        <button onclick="toggleCard('card_4', '4707')">상세보기</button>
+        <button onclick="hideCard('card_4')">닫기</button>
+        <div class="card-body">
+            <div class="info-row"><strong>정산액</strong><span>175,252원</span></div>
+            <div class="info-row"><strong>주문수</strong><span>46건</span></div>
+            <div class="info-row"><strong>배달료</strong><span>193,500원</span></div>
+            <div class="info-row"><strong>본사 및 협력사 수수료</strong><span>3,680원</span></div>
+            <div class="info-row"><strong>지사수수료</strong><span>5,520원</span></div>
+            <div class="info-row"><strong>고용보험</strong><span>1,253원</span></div>
+            <div class="info-row"><strong>산재보험</strong><span>1,409원</span></div>
+            <div class="info-row"><strong>원천세</strong><span>6,386원</span></div>
+            <div class="info-row"><strong>정산액 계산방법</strong><span>배달료 - 본사 및 협력사 수수료 - 지사 수수료 - 고용보험 - 산재보험 - 원천세 = 정산액</span></div>
+        </div>
+    </div>
+    
+    <div class="card locked" id="card_5">
+        <h2>최경규 (choigang1014)</h2>
+        <button onclick="toggleCard('card_5', '3605')">상세보기</button>
+        <button onclick="hideCard('card_5')">닫기</button>
+        <div class="card-body">
+            <div class="info-row"><strong>정산액</strong><span>116,225원</span></div>
+            <div class="info-row"><strong>주문수</strong><span>30건</span></div>
+            <div class="info-row"><strong>배달료</strong><span>128,220원</span></div>
+            <div class="info-row"><strong>본사 및 협력사 수수료</strong><span>2,400원</span></div>
+            <div class="info-row"><strong>지사수수료</strong><span>3,600원</span></div>
+            <div class="info-row"><strong>고용보험</strong><span>830원</span></div>
+            <div class="info-row"><strong>산재보험</strong><span>934원</span></div>
+            <div class="info-row"><strong>원천세</strong><span>4,231원</span></div>
+            <div class="info-row"><strong>정산액 계산방법</strong><span>배달료 - 본사 및 협력사 수수료 - 지사 수수료 - 고용보험 - 산재보험 - 원천세 = 정산액</span></div>
+        </div>
+    </div>
+    
+<script>
+function toggleCard(cardId, correctPassword) {
+    const card = document.getElementById(cardId);
+    if (card.classList.contains("unlocked")) {
+        card.classList.remove("unlocked");
+        card.classList.add("locked");
+    } else {
+        const input = prompt("비밀번호를 입력하세요:");
+        if (input === correctPassword) {
+            card.classList.remove("locked");
+            card.classList.add("unlocked");
+        } else {
+            alert("비밀번호가 틀렸습니다.");
+        }
+    }
+}
+function hideCard(cardId) {
+    const card = document.getElementById(cardId);
+    card.classList.remove("unlocked");
+    card.classList.add("locked");
+}
+</script>
+</body>
+</html>
