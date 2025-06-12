@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>라이더 명세서 자동 생성기</title>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <style>
+        body { font-family: Arial; background: #f4f4f4; padding: 20px; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #4CAF50; color: white; }
+        h1 { text-align: center; }
+        input[type="file"] { margin: 20px auto; display: block; }
+        a { color: #4CAF50; cursor: pointer; }
+        #details { display: none; margin-top: 30px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 id="title">라이더 명세서 자동 생성기</h1>
+    <input type="file" id="excelFile" accept=".xlsx" />
+    <div id="allDetails"></div>
+</div>
+
+<script>
+    let riderInfo = {};
+
+    document.getElementById('excelFile').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const data = new Uint8Array(e.target.result);
+            const workbook = XLSX.read(data, {type: 'array'});
+            const sheetName = workbook.SheetNames[0];
+            const sheet = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+
+            const allDetails = document.getElementById("allDetails");
+            allDetails.innerHTML = "";
+            riderInfo = {};
+
+            // Try to get date from file name
+            const filename = file.name;
+            const match = filename.match(/(\d{4})[.-]?(\d{2})[.-]?(\d{2})/);
+            if (match) {
+                const formattedDate = `${match[1]}.${match[2]}.${match[3]}`;
+                document.getElementById("title").innerText = `라이더 명세서 자동 생성기 (${formattedDate})`;
+            }
+
+            sheet.forEach(row => {
+                const name = row["라이더명"];
+                const userId = row["User ID"];
+
+                riderInfo[name] = {
+                    data: {
+                        "주문수": row["주문수"],
+                        "배달료": row["배달료"],
+                        "본사 및 협력사 수수료": `${row["주문수"] * 80}<br>${row["주문수"]} * 80`,
+                        "지사수수료": `${0}<br>0 * 120`,
+                        "고용보험": row["고용보험"],
+                        "산재보험": row["산재보험"],
+                        "원천세": row["원천세"],
+                        "정산액": `${row["배달료"] - (row["주문수"] * 80) - 0 - row["고용보험"] - row["산재보험"] - row["원천세"]}<br>${row["배달료"]} - ${row["주문수"] * 80} - 0 - ${row["고용보험"]} - ${row["산재보험"]} - ${row["원천세"]}`
+                    }
+                };
+
+                const section = document.createElement("section");
+                
+section.innerHTML = `
+    <h2>${name} (${userId})</h2>
+    <table>
+        <tr><th>항목</th><th></th></tr>
+        <tr><td>정산액</td><td>${riderInfo[name].data["정산액"]}</td></tr>
+        <tr><td>주문수</td><td>${riderInfo[name].data["주문수"]}</td></tr>
+        <tr><td>배달료</td><td>${riderInfo[name].data["배달료"]}</td></tr>
+        <tr><td>본사 및 협력사 수수료</td><td>${riderInfo[name].data["본사 및 협력사 수수료"]}</td></tr>
+        <tr><td>지사수수료</td><td>${riderInfo[name].data["지사수수료"]}</td></tr>
+        <tr><td>고용보험</td><td>${riderInfo[name].data["고용보험"]}</td></tr>
+        <tr><td>산재보험</td><td>${riderInfo[name].data["산재보험"]}</td></tr>
+        <tr><td>원천세</td><td>${riderInfo[name].data["원천세"]}</td></tr>
+    </table>
+    <hr/>
+`;
+
+                allDetails.appendChild(section);
+            });
+        };
+        reader.readAsArrayBuffer(file);
+    });
+</script>
+</body>
+</html>
