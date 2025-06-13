@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>라이더 명세서 (2025.06.12)</title>
+    <style>
+        body { font-family: Arial; background-color: #f4f4f4; padding: 30px; }
+        .card {
+            background: white;
+            font-size: 20px;
+            padding: 30px;
+            max-width: 1000px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-left: auto; margin-right: auto;
+        }
+        .card h2 { margin-top: 0; color: #4CAF50; }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            white-space: nowrap;
+            overflow-x: auto;
+        }
+        .info-row:last-child { border-bottom: none; }
+        .locked .card-body { display: none; }
+        .unlocked .card-body { display: block; }
+        button {
+            margin-top: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align:center;">라이더 정산 명세서 (2025.06.12)</h1>
+
+
+    <div class="card locked" id="card_0">
+        <h2>김정혁 (kjh130212)</h2>
+        <button onclick="toggleCard('card_0', '6144')">상세보기</button>
+        <button onclick="hideCard('card_0')">닫기</button>
+        <div class="card-body">
+            <div class="info-row"><strong>정산액</strong><span>54,067원</span></div>
+            <div class="info-row"><strong>주문수</strong><span>13건</span></div>
+            <div class="info-row"><strong>배달료</strong><span>56,260원</span></div>
+            <div class="info-row"><strong>수수료</strong><span>1,040원</span></div>
+            <div class="info-row"><strong>고용보험</strong><span>365원</span></div>
+            <div class="info-row"><strong>산재보험</strong><span>410원</span></div>
+            <div class="info-row"><strong>원천세</strong><span>1,857원</span></div>
+            <div class="info-row"><strong>추가정산</strong><span>1,479원</span></div>
+            <div class="info-row"><strong>정산액 계산방법</strong><span>
+                배달료 - 수수료 - 고용보험 - 산재보험 - 원천세 + 추가정산 = 정산액
+            </span></div>
+        </div>
+    </div>
+
+    <div class="card locked" id="card_1">
+        <h2>안태옥 (dksxodhr)</h2>
+        <button onclick="toggleCard('card_1', '1035')">상세보기</button>
+        <button onclick="hideCard('card_1')">닫기</button>
+        <div class="card-body">
+            <div class="info-row"><strong>정산액</strong><span>128,793원</span></div>
+            <div class="info-row"><strong>주문수</strong><span>34건</span></div>
+            <div class="info-row"><strong>배달료</strong><span>134,860원</span></div>
+            <div class="info-row"><strong>수수료</strong><span>2,720원</span></div>
+            <div class="info-row"><strong>고용보험</strong><span>873원</span></div>
+            <div class="info-row"><strong>산재보험</strong><span>982원</span></div>
+            <div class="info-row"><strong>원천세</strong><span>4,450원</span></div>
+            <div class="info-row"><strong>추가정산</strong><span>2,958원</span></div>
+            <div class="info-row"><strong>정산액 계산방법</strong><span>
+                배달료 - 수수료 - 고용보험 - 산재보험 - 원천세 + 추가정산 = 정산액
+            </span></div>
+        </div>
+    </div>
+
+    <div class="card locked" id="card_2">
+        <h2>정호근 (jhkwow)</h2>
+        <button onclick="toggleCard('card_2', '0137')">상세보기</button>
+        <button onclick="hideCard('card_2')">닫기</button>
+        <div class="card-body">
+            <div class="info-row"><strong>정산액</strong><span>34,164원</span></div>
+            <div class="info-row"><strong>주문수</strong><span>10건</span></div>
+            <div class="info-row"><strong>배달료</strong><span>36,680원</span></div>
+            <div class="info-row"><strong>수수료</strong><span>800원</span></div>
+            <div class="info-row"><strong>고용보험</strong><span>238원</span></div>
+            <div class="info-row"><strong>산재보험</strong><span>268원</span></div>
+            <div class="info-row"><strong>원천세</strong><span>1,210원</span></div>
+            <div class="info-row"><strong>추가정산</strong><span>0원</span></div>
+            <div class="info-row"><strong>정산액 계산방법</strong><span>
+                배달료 - 수수료 - 고용보험 - 산재보험 - 원천세 + 추가정산 = 정산액
+            </span></div>
+        </div>
+    </div>
+
+    <div class="card locked" id="card_3">
+        <h2>이철주 (dlcjfwn1123 )</h2>
+        <button onclick="toggleCard('card_3', '7103')">상세보기</button>
+        <button onclick="hideCard('card_3')">닫기</button>
+        <div class="card-body">
+            <div class="info-row"><strong>정산액</strong><span>492원</span></div>
+            <div class="info-row"><strong>주문수</strong><span>0건</span></div>
+            <div class="info-row"><strong>배달료</strong><span>0원</span></div>
+            <div class="info-row"><strong>수수료</strong><span>0원</span></div>
+            <div class="info-row"><strong>고용보험</strong><span>0원</span></div>
+            <div class="info-row"><strong>산재보험</strong><span>0원</span></div>
+            <div class="info-row"><strong>원천세</strong><span>0원</span></div>
+            <div class="info-row"><strong>추가정산</strong><span>492원</span></div>
+            <div class="info-row"><strong>정산액 계산방법</strong><span>
+                배달료 - 수수료 - 고용보험 - 산재보험 - 원천세 + 추가정산 = 정산액
+            </span></div>
+        </div>
+    </div>
+
+    <div class="card locked" id="card_4">
+        <h2>임태종 (asdsw12 )</h2>
+        <button onclick="toggleCard('card_4', '4707')">상세보기</button>
+        <button onclick="hideCard('card_4')">닫기</button>
+        <div class="card-body">
+            <div class="info-row"><strong>정산액</strong><span>492원</span></div>
+            <div class="info-row"><strong>주문수</strong><span>0건</span></div>
+            <div class="info-row"><strong>배달료</strong><span>0원</span></div>
+            <div class="info-row"><strong>수수료</strong><span>0원</span></div>
+            <div class="info-row"><strong>고용보험</strong><span>0원</span></div>
+            <div class="info-row"><strong>산재보험</strong><span>0원</span></div>
+            <div class="info-row"><strong>원천세</strong><span>0원</span></div>
+            <div class="info-row"><strong>추가정산</strong><span>492원</span></div>
+            <div class="info-row"><strong>정산액 계산방법</strong><span>
+                배달료 - 수수료 - 고용보험 - 산재보험 - 원천세 + 추가정산 = 정산액
+            </span></div>
+        </div>
+    </div>
+
+
+<script>
+function toggleCard(cardId, correctPassword) {
+    const card = document.getElementById(cardId);
+    if (card.classList.contains("unlocked")) {
+        card.classList.remove("unlocked");
+        card.classList.add("locked");
+    } else {
+        const input = prompt("비밀번호를 입력하세요:");
+        if (input === correctPassword) {
+            card.classList.remove("locked");
+            card.classList.add("unlocked");
+        } else {
+            alert("비밀번호가 틀렸습니다.");
+        }
+    }
+}
+function hideCard(cardId) {
+    const card = document.getElementById(cardId);
+    card.classList.remove("unlocked");
+    card.classList.add("locked");
+}
+</script>
+</body>
+</html>
