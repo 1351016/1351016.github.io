@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>총금액 계산기</title>
+    <style>
+        body { font-family: Arial; background-color: #f0f0f0; padding: 40px; text-align: center; }
+        .container { background: white; padding: 30px; border-radius: 10px; display: inline-block; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input[type="number"] { padding: 10px; font-size: 18px; width: 200px; }
+        .result { margin-top: 20px; font-size: 22px; color: #4CAF50; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>총금액 계산기</h1>
+        <p>총금액을 입력하세요 (13% 공제 후 계산)</p>
+        <input type="number" id="totalAmount" placeholder="총금액 입력" oninput="calculate()">
+        <div class="result" id="deductedText">13% 제한금액: 0원</div>
+        <div class="result" id="resultText">정산액: 0원</div>
+    </div>
+
+    <script>
+        function calculate() {
+            const input = document.getElementById('totalAmount').value;
+            const amount = parseFloat(input) || 0;
+            const deducted = Math.round(amount * 0.13);
+            const finalAmount = amount - deducted;
+
+            document.getElementById('deductedText').innerText = '13% 제한금액: ' + deducted.toLocaleString() + '원';
+            document.getElementById('resultText').innerText = '정산액: ' + Math.round(finalAmount).toLocaleString() + '원';
+        }
+    </script>
+</body>
+</html>
